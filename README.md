@@ -1,4 +1,4 @@
-# KMeans Image Compressor (Full Project)
+# KMeans Image Compressor 
 
 ## Backend
 ```
