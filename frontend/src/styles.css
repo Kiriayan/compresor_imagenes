@@ -1,17 +1,151 @@
-body{font-family: Arial, Helvetica, sans-serif; background:#f4f7fb; margin:0; color:#222}
-.container{max-width:1100px;margin:20px auto;padding:10px}
-header{display:flex;justify-content:space-between;align-items:center}
-header h1{margin:0}
-.auth-box{max-width:380px;margin:60px auto;padding:20px;background:white;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.08)}
-.auth-box input{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:4px}
-.auth-box button{padding:10px 14px;margin-top:6px}
-.auth-box .links{margin-top:10px}
-.error{color:crimson}
-.controls{display:flex;gap:10px;align-items:center;margin:20px 0}
-.btn{background:#fffed0;border:1px solid #ccc;padding:8px 12px;border-radius:6px;cursor:pointer}
-.controls input[type=number]{width:80px;padding:6px;margin-left:6px}
-.images-row{display:flex;gap:20px}
-.img-card{flex:1;background:white;padding:10px;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,0.06)}
-.img-box{height:420px;display:flex;align-items:center;justify-content:center;border:1px solid #eee;border-radius:6px;background:#fafafa;overflow:hidden}
-.img-box img{max-width:100%;max-height:100%}
-.placeholder{color:#999}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f4f6fb;margin:0;color:#333}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  /* Fondo azul con gradiente como los paneles */
+  background: linear-gradient(135deg, #2196F3, #21CBF3);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 28px;
+}
+
+.brand {
+  font-weight: bold;
+  color: white;       /* cambia a blanco para contraste */
+  font-size: 1.2em;
+}
+
+.logout-btn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #c62828;
+}
+
+
+/* Descripción */
+.description{max-width:900px;margin:20px auto;background:white;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.description h2{margin-top:0;color:#1976D2}
+
+/* Contenido principal */
+.main-content{max-width:1100px;margin:20px auto;padding:10px}
+.controls{display:flex;flex-wrap:wrap;gap:15px;align-items:center;margin:20px 0}
+.controls input[type=number]{width:80px;padding:8px;border:1px solid #ccc;border-radius:6px}
+.controls button{padding:10px 16px;background:linear-gradient(90deg,#FF9800,#F57C00);border:none;color:white;border-radius:8px;cursor:pointer;transition:0.3s}
+.controls button:hover{transform:scale(1.05)}
+.images-row{display:flex;flex-wrap:wrap;gap:20px}
+.img-card{flex:1;background:white;padding:14px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,0.08)}
+.img-card h3{text-align:center;color:#444;margin-top:0}
+.img-box{height:300px;display:flex;align-items:center;justify-content:center;border:1px solid #eee;border-radius:8px;background:#fafafa;overflow:hidden}
+.img-box img{max-width:100%;max-height:100%;border-radius:6px}
+.placeholder{color:#999;text-align:center}
+.download-btn{display:block;margin:10px auto 0;padding:10px 16px;background:linear-gradient(90deg,#4CAF50,#388E3C);border:none;color:white;border-radius:8px;cursor:pointer;transition:0.3s}
+.download-btn:hover{transform:scale(1.05)}
+
+@media(max-width:768px){
+  .images-row{flex-direction:column}
+}
+
+/*log in y sign up*/
+.auth-container{
+  display:flex;
+  max-width:900px;
+  margin:60px auto;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+.auth-box-left{
+  flex:1;
+  padding:40px;
+  background:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.auth-box-left h2{margin:0 0 10px;color:#1976D2;font-size:1.6em}
+.auth-box-left .welcome{margin-bottom:20px;color:#555}
+.auth-box-left input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-size:1em}
+.auth-box-left button{width:100%;padding:12px;margin-top:12px;background:linear-gradient(90deg,#4CAF50,#388E3C);border:none;color:white;
+  font-size:1em;border-radius:8px;cursor:pointer;transition:0.3s}
+.auth-box-left button:hover{transform:translateY(-2px)}
+.auth-box-left .links{text-align:center;margin-top:12px}
+.auth-box-left .links a{color:#2196F3;text-decoration:none}
+.auth-box-left .links a:hover{text-decoration:underline}
+.auth-box-right{
+  flex:1;
+  padding:40px;
+  background:linear-gradient(135deg,#2196F3,#21CBF3);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.auth-box-right h3{margin:0 0 15px;font-size:1.5em}
+.auth-box-right p{font-size:1em;line-height:1.5}
+.error{color:#e53935;background:#ffebee;padding:8px 12px;border-radius:8px;margin-top:8px;font-size:0.9em}
+
+@media(max-width:768px){
+  .auth-container{flex-direction:column}
+  .auth-box-right{order:-1;text-align:center}
+}
+/* Botón base */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease, transform 0.1s ease;
+  user-select: none;
+  border: none;
+}
+
+/* Botón Seleccionar imagen */
+.btn-upload {
+  background: #4a90e2;
+  color: white;
+}
+.btn-upload:hover {
+  background: #357ab8;
+}
+.btn-upload:active {
+  transform: scale(0.97);
+}
+
+/* Estilo del botón de subir imagen */
+.btn-upload {
+  background: #4a90e2;
+  color: white;
+  border: none;
+}
+
+.btn-upload:hover {
+  background: #357ab8;
+}
+
+.btn-upload:active {
+  transform: scale(0.97);
+}

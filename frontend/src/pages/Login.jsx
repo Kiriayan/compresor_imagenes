@@ -27,17 +27,28 @@ export default function Login(){
   };
 
   return (
-    <div className="auth-box">
-      <h2>Iniciar sesión</h2>
-      <form onSubmit={handleLogin}>
-        <input placeholder="Usuario" value={username} onChange={e=>setUsername(e.target.value)} required/>
-        <input placeholder="Contraseña" type="password" value={password} onChange={e=>setPassword(e.target.value)} required/>
-        <button type="submit">Entrar</button>
-      </form>
-      <div className="links">
-        <a href="/signup">Crear cuenta</a>
+    <div className="auth-container">
+      <div className="auth-box-left">
+        <h2>Log in</h2>
+        <p className="welcome">Inicia sesión en tu cuenta</p>
+        <form onSubmit={handleLogin}>
+          <input placeholder="Usuario" value={username} onChange={e=>setUsername(e.target.value)} required/>
+          <input placeholder="Contraseña" type="password" value={password} onChange={e=>setPassword(e.target.value)} required/>
+          <button type="submit">Entrar</button>
+        </form>
+        <div className="links">
+          <a href="/signup">¿No tienes cuenta? Crear</a>
+        </div>
+        {msg && <p className="error">{msg}</p>}
       </div>
-      {msg && <p className="error">{msg}</p>}
+      <div className="auth-box-right">
+        <h3>Bienvenido a EcoPixel</h3>
+        <p>
+          EcoPixel es una herramienta para <b>comprimir imágenes</b> utilizando un algoritmo de agrupación de colores. 
+          Para utilizar nuestro programa, solo requieres de crear una cuenta con tu nombre de usuario y contraseña.
+          sube una imagen, selecciona el número de colores y obtén una versión optimizada en segundos.
+        </p>
+      </div>
     </div>
   );
 }

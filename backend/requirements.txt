@@ -6,3 +6,4 @@ numpy
 opencv-python-headless
 passlib[bcrypt]
 python-jose
+argon2-cffi
